@@ -35,7 +35,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: env(safe-area-inset-top, 20px) 18px env(safe-area-inset-bottom, 16px) 18px;
+      padding: env(safe-area-inset-top, 14px) 16px env(safe-area-inset-bottom, 12px) 16px;
       overflow: hidden;
     }
 
@@ -69,7 +69,7 @@
     }
 
     .cloud-1 {
-      top: 36%;
+      top: 35%;
       width: 68px;
       opacity: 0.85;
       animation: moveLeft 5.4s linear infinite;
@@ -77,7 +77,7 @@
     }
 
     .cloud-2 {
-      top: 41%;
+      top: 40%;
       width: 86px;
       opacity: 0.65;
       animation: moveLeft 7.0s linear infinite;
@@ -85,7 +85,7 @@
     }
 
     .cloud-3 {
-      top: 34%;
+      top: 32%;
       width: 46px;
       opacity: 0.9;
       animation: moveLeft 4.5s linear infinite;
@@ -93,7 +93,7 @@
     }
 
     .cloud-4 {
-      top: 45%;
+      top: 46%;
       width: 62px;
       opacity: 0.75;
       animation: moveLeft 5.9s linear infinite;
@@ -101,7 +101,7 @@
     }
 
     .cloud-5 {
-      top: 48%;
+      top: 49%;
       width: 40px;
       opacity: 0.55;
       animation: moveLeft 7.5s linear infinite;
@@ -109,23 +109,16 @@
     }
 
     /* =========================================
-       TOP: HEADER, RELOJ, FECHA
+       HEADER (TIU VIRTUAL MÁS A LA DERECHA)
        ========================================= */
-    .top-section {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 2;
-      margin-top: 4px;
-    }
-
     .header {
       width: 100%;
       display: flex;
       align-items: center;
-      margin-bottom: 18px; /* Cota superior */
-      padding-left: 2px;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      padding-left: 8px; /* Botón pegado a la izquierda */
+      z-index: 2;
     }
 
     .back-btn {
@@ -139,7 +132,7 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
       border: none;
       cursor: pointer;
-      margin-right: 14px;
+      margin-right: 22px; /* Desplaza TIU VIRTUAL a la derecha */
     }
 
     .back-btn svg {
@@ -148,7 +141,6 @@
       fill: #ff383c;
     }
 
-    /* TIU VIRTUAL más pequeño y fino */
     .title {
       font-family: 'Oswald', sans-serif;
       font-size: 1.15rem;
@@ -158,16 +150,19 @@
       letter-spacing: 0.5px;
     }
 
-    /* Cuadro de la hora: menor ancho y mayor alto */
+    /* =========================================
+       PASTILLA DE LA HORA (ALTURA CALIBRADA: 58px)
+       ========================================= */
     .clock-pill {
       background: #dfdffc;
       border-radius: 12px;
-      width: 220px;
-      height: 68px;
-      margin-bottom: 10px; /* Cota reloj-fecha */
+      width: 232px;
+      height: 58px; /* Altura reducida y proporcionada */
+      margin-bottom: 8px;
       display: flex;
       justify-content: center;
       align-items: center;
+      z-index: 2;
     }
 
     .clock {
@@ -184,28 +179,26 @@
       color: #5c6270;
       font-weight: 400;
       text-align: center;
+      margin-bottom: 24px;
+      z-index: 2;
     }
 
     /* =========================================
-       FOTO DE PERFIL ELEVADA
+       FOTO TOTALMENTE SEPARADA DE LA TARJETA
        ========================================= */
-    .avatar-wrapper {
-      position: relative;
-      margin-top: 36px;
-      margin-bottom: -46px; /* Montaje sutil sobre la tarjeta */
-      z-index: 3;
-    }
-
     .profile-picture {
-      width: 136px;
-      height: 136px;
+      width: 138px;
+      height: 138px;
       border-radius: 50%;
       overflow: hidden;
       background: #e2e5eb;
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      z-index: 2;
+      margin-bottom: 26px; /* Separación física real con la tarjeta */
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+      flex-shrink: 0;
     }
 
     .profile-picture img {
@@ -215,17 +208,16 @@
     }
 
     /* =========================================
-       TARJETA DE INFORMACIÓN
+       TARJETA BLANCA INDEPENDIENTE
        ========================================= */
     .card {
       background: #ffffff;
       border-radius: 12px;
       width: 100%;
-      padding: 64px 16px 20px 16px; /* Cota vertical larga hasta el nombre */
+      padding: 24px 16px 20px 16px; /* Padding limpio sin trucos de montaje */
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       text-align: center;
       z-index: 2;
-      margin-top: 0;
     }
 
     .name {
@@ -288,7 +280,6 @@
 <body>
   <div class="app-screen">
 
-    <!-- Nubes animadas -->
     <div class="clouds-layer">
       <svg class="cloud cloud-1" viewBox="0 0 74 34">
         <path d="M57 34H6a6 6 0 0 1-6-6c0-3.3 2.7-6 6-6a7.8 7.8 0 0 1 2.2.3C10.5 12.3 19.3 5 30 5c9.2 0 17 5.4 19.8 13.1A9.9 9.9 0 0 1 57 16a10 10 0 0 1 10 10c0 4.4-3.6 8-10 8z"/>
@@ -307,30 +298,28 @@
       </svg>
     </div>
 
-    <!-- Parte Superior -->
-    <div class="top-section">
-      <div class="header">
-        <button class="back-btn" onclick="history.back()">
-          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-        </button>
-        <div class="title">TIU Virtual</div>
-      </div>
-
-      <div class="clock-pill">
-        <div id="clock" class="clock">--:--:--</div>
-      </div>
-
-      <div id="date" class="date">--</div>
+    <!-- Header con TIU VIRTUAL alineado a la derecha -->
+    <div class="header">
+      <button class="back-btn" onclick="history.back()">
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <div class="title">TIU Virtual</div>
     </div>
 
-    <!-- Foto de carnet elevada en el cielo -->
-    <div class="avatar-wrapper">
-      <div class="profile-picture">
-        <img src="./carnet.jpg" alt="Foto de perfil" />
-      </div>
+    <!-- Cápsula con altura exacta -->
+    <div class="clock-pill">
+      <div id="clock" class="clock">--:--:--</div>
     </div>
 
-    <!-- Tarjeta blanca con margen superior amplio al nombre -->
+    <!-- Fecha -->
+    <div id="date" class="date">--</div>
+
+    <!-- Foto totalmente despegada de la tarjeta -->
+    <div class="profile-picture">
+      <img src="./carnet.jpg" alt="Foto de perfil" />
+    </div>
+
+    <!-- Tarjeta blanca de datos -->
     <div class="card">
       <div class="name">Marisa Valery</div>
       <div class="masked-lastname">G*** A***</div>
