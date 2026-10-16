@@ -35,7 +35,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: env(safe-area-inset-top, 14px) 16px 0 16px;
+      padding: env(safe-area-inset-top, 14px) 16px env(safe-area-inset-bottom, 20px) 16px;
       overflow: hidden;
     }
 
@@ -184,7 +184,7 @@
     }
 
     /* =========================================
-       FOTO DE PERFIL (CENTRO VERTICAL)
+       FOTO DE PERFIL
        ========================================= */
     .profile-picture {
       width: 138px;
@@ -196,7 +196,7 @@
       justify-content: center;
       align-items: center;
       z-index: 2;
-      margin-bottom: 42px; /* SEPARACIÓN AMPLIA HACIA LA TARJETA BLANCA */
+      margin-bottom: 42px;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
       flex-shrink: 0;
     }
@@ -208,21 +208,22 @@
     }
 
     /* =========================================
-       TARJETA BLANCA ALARGADA
+       TARJETA BLANCA COMPACTA (ALTO REDUCIDO)
        ========================================= */
     .card {
       background: #ffffff;
-      border-radius: 14px 14px 0 0;
+      border-radius: 12px; /* Redondeada en las 4 esquinas */
       width: 100%;
-      flex: 1;
-      box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.03);
+      height: 335px; /* Alto exacto proporcional a la referencia */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       text-align: center;
       z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 16px 16px 36px 16px;
+      padding: 16px;
+      flex-shrink: 0;
     }
 
     .name {
@@ -319,12 +320,12 @@
     <!-- Fecha -->
     <div id="date" class="date">--</div>
 
-    <!-- Foto centrada en el cielo -->
+    <!-- Foto -->
     <div class="profile-picture">
       <img src="./carnet.jpg" alt="Foto de perfil" />
     </div>
 
-    <!-- Tarjeta blanca separada -->
+    <!-- Tarjeta blanca con alto calibrado a 335px -->
     <div class="card">
       <div class="name">Marisa Valery</div>
       <div class="masked-lastname">G*** A***</div>
