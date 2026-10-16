@@ -35,7 +35,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: env(safe-area-inset-top, 14px) 16px env(safe-area-inset-bottom, 20px) 16px;
+      padding: env(safe-area-inset-top, 14px) 16px env(safe-area-inset-bottom, 24px) 16px;
       overflow: hidden;
     }
 
@@ -196,7 +196,7 @@
       justify-content: center;
       align-items: center;
       z-index: 2;
-      margin-bottom: 42px;
+      margin-bottom: 38px;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
       flex-shrink: 0;
     }
@@ -208,13 +208,13 @@
     }
 
     /* =========================================
-       TARJETA BLANCA COMPACTA (ALTO REDUCIDO)
+       TARJETA BLANCA COMPACTA (MENOS ALTA: 280px)
        ========================================= */
     .card {
       background: #ffffff;
-      border-radius: 12px; /* Redondeada en las 4 esquinas */
+      border-radius: 12px;
       width: 100%;
-      height: 335px; /* Alto exacto proporcional a la referencia */
+      height: 280px; /* Reducción precisa de altura */
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       text-align: center;
       z-index: 2;
@@ -222,7 +222,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 16px;
+      padding: 12px 16px;
       flex-shrink: 0;
     }
 
@@ -244,36 +244,36 @@
       letter-spacing: 2px;
       line-height: 1.05;
       margin-top: 2px;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .field-label {
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       color: #5d6371;
       font-weight: 400;
-      margin-top: 8px;
+      margin-top: 6px;
     }
 
     .field-value {
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       font-weight: 700;
       color: #42526a;
-      margin-top: 2px;
+      margin-top: 1px;
       letter-spacing: 0.4px;
     }
 
     .career {
-      font-size: 1.02rem;
+      font-size: 1rem;
       font-weight: 700;
       color: #42526a;
-      margin-top: 18px;
-      margin-bottom: 12px;
+      margin-top: 14px;
+      margin-bottom: 8px;
       letter-spacing: 0.2px;
       text-transform: uppercase;
     }
 
     .campus {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: #2b303a;
       font-weight: 400;
       display: flex;
@@ -325,7 +325,7 @@
       <img src="./carnet.jpg" alt="Foto de perfil" />
     </div>
 
-    <!-- Tarjeta blanca con alto calibrado a 335px -->
+    <!-- Tarjeta blanca compacta (280px) -->
     <div class="card">
       <div class="name">Marisa Valery</div>
       <div class="masked-lastname">G*** A***</div>
