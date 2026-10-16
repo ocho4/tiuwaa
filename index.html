@@ -35,7 +35,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: env(safe-area-inset-top, 14px) 16px env(safe-area-inset-bottom, 12px) 16px;
+      padding: env(safe-area-inset-top, 14px) 16px 0 16px; /* Pegado abajo para que la tarjeta se extienda */
       overflow: hidden;
     }
 
@@ -69,7 +69,7 @@
     }
 
     .cloud-1 {
-      top: 35%;
+      top: 32%;
       width: 68px;
       opacity: 0.85;
       animation: moveLeft 5.4s linear infinite;
@@ -77,7 +77,7 @@
     }
 
     .cloud-2 {
-      top: 40%;
+      top: 38%;
       width: 86px;
       opacity: 0.65;
       animation: moveLeft 7.0s linear infinite;
@@ -85,7 +85,7 @@
     }
 
     .cloud-3 {
-      top: 32%;
+      top: 30%;
       width: 46px;
       opacity: 0.9;
       animation: moveLeft 4.5s linear infinite;
@@ -93,7 +93,7 @@
     }
 
     .cloud-4 {
-      top: 46%;
+      top: 43%;
       width: 62px;
       opacity: 0.75;
       animation: moveLeft 5.9s linear infinite;
@@ -101,7 +101,7 @@
     }
 
     .cloud-5 {
-      top: 49%;
+      top: 46%;
       width: 40px;
       opacity: 0.55;
       animation: moveLeft 7.5s linear infinite;
@@ -116,8 +116,8 @@
       display: flex;
       align-items: center;
       margin-top: 4px;
-      margin-bottom: 28px; /* COTA 1: Separación amplia a la cápsula */
-      padding-left: 8px;
+      margin-bottom: 24px;
+      padding-left: 6px;
       z-index: 2;
     }
 
@@ -157,8 +157,8 @@
       background: #dfdffc;
       border-radius: 12px;
       width: 230px;
-      height: 54px; /* Altura calibrada */
-      margin-bottom: 12px; /* COTA 2: Separación reloj - fecha */
+      height: 54px;
+      margin-bottom: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -179,12 +179,12 @@
       color: #5c6270;
       font-weight: 400;
       text-align: center;
-      margin-bottom: 34px; /* COTA 3: Separación fecha - foto */
+      margin-bottom: 22px; /* COTA 1: Separación exacta fecha -> cabeza */
       z-index: 2;
     }
 
     /* =========================================
-       FOTO DE PERFIL
+       FOTO DE PERFIL (FLOTANDO EN EL CIELO)
        ========================================= */
     .profile-picture {
       width: 136px;
@@ -196,7 +196,7 @@
       justify-content: center;
       align-items: center;
       z-index: 2;
-      margin-bottom: 38px; /* COTA 4: Separación amplia foto - tarjeta blanca */
+      margin-bottom: 30px; /* COTA 2: Separación exacta foto -> tarjeta */
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
       flex-shrink: 0;
     }
@@ -208,16 +208,21 @@
     }
 
     /* =========================================
-       TARJETA BLANCA
+       TARJETA BLANCA ALARGADA (COTA 3)
        ========================================= */
     .card {
       background: #ffffff;
-      border-radius: 12px;
+      border-radius: 14px 14px 0 0; /* Esquinas superiores redondeadas */
       width: 100%;
-      padding: 24px 16px 20px 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      flex: 1; /* Se alarga hacia el fondo de la pantalla */
+      min-height: 380px;
+      padding: 30px 16px 40px 16px;
+      box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.03);
       text-align: center;
       z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .name {
@@ -237,22 +242,22 @@
       color: #ff383c;
       letter-spacing: 2px;
       line-height: 1.05;
-      margin-top: 2px;
-      margin-bottom: 12px;
+      margin-top: 3px;
+      margin-bottom: 14px;
     }
 
     .field-label {
       font-size: 0.76rem;
       color: #5d6371;
       font-weight: 400;
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     .field-value {
       font-size: 0.95rem;
       font-weight: 700;
       color: #42526a;
-      margin-top: 1px;
+      margin-top: 2px;
       letter-spacing: 0.4px;
     }
 
@@ -260,8 +265,8 @@
       font-size: 1.02rem;
       font-weight: 700;
       color: #42526a;
-      margin-top: 18px;
-      margin-bottom: 12px;
+      margin-top: 20px;
+      margin-bottom: 14px;
       letter-spacing: 0.2px;
       text-transform: uppercase;
     }
@@ -314,12 +319,12 @@
     <!-- Fecha -->
     <div id="date" class="date">--</div>
 
-    <!-- Foto con separación libre en el cielo -->
+    <!-- Foto subida en el cielo -->
     <div class="profile-picture">
       <img src="./carnet.jpg" alt="Foto de perfil" />
     </div>
 
-    <!-- Tarjeta blanca -->
+    <!-- Tarjeta blanca alargada con cuerpo hacia abajo -->
     <div class="card">
       <div class="name">Marisa Valery</div>
       <div class="masked-lastname">G*** A***</div>
