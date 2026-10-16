@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>TIU Virtual – Demo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>TIU Virtual</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -24,7 +24,6 @@
       overflow: hidden;
     }
 
-    /* Contenedor base */
     .container {
       position: relative;
       width: 100vw;
@@ -38,22 +37,22 @@
     }
 
     /* =========================================
-       NUBES ANIMADAS (Pasan detrás de la foto)
+       NUBES ANIMADAS (Velocidad oficial: 4.5s - 7.5s)
        ========================================= */
     .clouds-band {
       position: absolute;
-      top: 36%;
+      top: 32%;
       left: 0;
       width: 100%;
-      height: 22%;
+      height: 24%;
       pointer-events: none;
       overflow: hidden;
-      z-index: 1; /* Detrás de la foto */
+      z-index: 1;
     }
 
     .cloud {
       position: absolute;
-      fill: #b8c0eb;
+      fill: #b9c1eb;
       will-change: transform;
     }
 
@@ -67,23 +66,23 @@
     }
 
     .cloud-1 {
-      top: 15%;
-      width: 65px;
-      opacity: 0.8;
+      top: 14%;
+      width: 70px;
+      opacity: 0.85;
       animation: moveLeft 5.5s linear infinite;
       animation-delay: -1.2s;
     }
 
     .cloud-2 {
-      top: 32%;
-      width: 85px;
+      top: 36%;
+      width: 88px;
       opacity: 0.65;
       animation: moveLeft 7.2s linear infinite;
       animation-delay: -4s;
     }
 
     .cloud-3 {
-      top: 12%;
+      top: 8%;
       width: 48px;
       opacity: 0.9;
       animation: moveLeft 4.6s linear infinite;
@@ -91,39 +90,69 @@
     }
 
     .cloud-4 {
-      top: 62%;
-      width: 60px;
-      opacity: 0.7;
+      top: 56%;
+      width: 64px;
+      opacity: 0.75;
       animation: moveLeft 6.0s linear infinite;
       animation-delay: -3.8s;
     }
 
     .cloud-5 {
-      top: 72%;
-      width: 40px;
+      top: 66%;
+      width: 42px;
       opacity: 0.55;
       animation: moveLeft 7.8s linear infinite;
       animation-delay: -0.8s;
     }
 
     /* =========================================
-       FOTO DE PERFIL CIRCULAR (carnet.jpg)
+       RELOJ Y FECHA CALIBRADOS
+       ========================================= */
+    .clock {
+      position: absolute;
+      top: 7.2%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.15rem;
+      color: #1a1a1a;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      font-variant-numeric: tabular-nums;
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+    }
+
+    .date {
+      position: absolute;
+      top: 14.5%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.92rem;
+      color: #6b7280;
+      font-weight: 400;
+      text-align: center;
+      width: 100%;
+      z-index: 2;
+    }
+
+    /* =========================================
+       FOTO DE PERFIL ENCAJADA
        ========================================= */
     .profile-picture {
       position: absolute;
-      top: 41.2%;
+      top: 36.6%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 148px;
-      height: 148px;
+      width: 154px;
+      height: 154px;
       border-radius: 50%;
       overflow: hidden;
       background: #f7f9fd;
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 3; /* Encima de las nubes y del fondo */
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      z-index: 3;
     }
 
     .profile-picture img {
@@ -133,39 +162,11 @@
     }
 
     /* =========================================
-       RELOJ, FECHA Y DATOS DINÁMICOS
+       NOMBRE EN ROJO ENCENDIDO Y TIPOGRAFÍA FINA
        ========================================= */
-    .clock {
-      position: absolute;
-      top: 14.8%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 2.35rem;
-      color: #111111;
-      font-weight: 500;
-      letter-spacing: -0.5px;
-      font-variant-numeric: tabular-nums;
-      z-index: 2;
-      text-align: center;
-      width: 100%;
-    }
-
-    .date {
-      position: absolute;
-      top: 24.5%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.95rem;
-      color: #5c6270;
-      font-weight: 500;
-      text-align: center;
-      width: 100%;
-      z-index: 2;
-    }
-
     .name-container {
       position: absolute;
-      top: 61.8%;
+      top: 54.2%;
       left: 50%;
       transform: translateX(-50%);
       width: 90%;
@@ -175,29 +176,28 @@
 
     .name {
       font-family: 'Oswald', sans-serif;
-      font-size: 2.1rem;
-      font-weight: 700;
-      color: #e63946;
+      font-size: 2.05rem;
+      font-weight: 500;
+      color: #eb2d3a;
       text-transform: uppercase;
-      line-height: 1.1;
-      letter-spacing: 0.4px;
+      line-height: 1.05;
+      letter-spacing: 0.2px;
     }
 
     .masked-lastname {
       font-family: 'Oswald', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #e63946;
-      letter-spacing: 2.5px;
-      line-height: 1.1;
-      margin-top: 4px;
+      font-size: 1.95rem;
+      font-weight: 500;
+      color: #eb2d3a;
+      letter-spacing: 2px;
+      line-height: 1.05;
+      margin-top: 3px;
     }
   </style>
 </head>
 <body>
   <div class="container">
 
-    <!-- Capa de nubes detrás de la foto -->
     <div class="clouds-band">
       <svg class="cloud cloud-1" viewBox="0 0 74 34">
         <path d="M57 34H6a6 6 0 0 1-6-6c0-3.3 2.7-6 6-6a7.8 7.8 0 0 1 2.2.3C10.5 12.3 19.3 5 30 5c9.2 0 17 5.4 19.8 13.1A9.9 9.9 0 0 1 57 16a10 10 0 0 1 10 10c0 4.4-3.6 8-10 8z"/>
@@ -216,18 +216,18 @@
       </svg>
     </div>
 
-    <!-- Foto original de carnet.jpg sobrepuesta -->
-    <div class="profile-picture">
-      <img src="./carnet.jpg" alt="Foto de perfil" />
-    </div>
-
     <!-- Reloj -->
     <div id="clock" class="clock">--:--:--</div>
 
     <!-- Fecha -->
     <div id="date" class="date">--</div>
 
-    <!-- Nombre y apellido -->
+    <!-- Foto de carnet centrada -->
+    <div class="profile-picture">
+      <img src="./carnet.jpg" alt="Foto de perfil" />
+    </div>
+
+    <!-- Nombre con peso balanceado y rojo puro -->
     <div class="name-container">
       <div class="name">Marisa Valery</div>
       <div class="masked-lastname">G*** A***</div>
