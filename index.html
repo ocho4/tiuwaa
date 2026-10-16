@@ -109,15 +109,15 @@
     }
 
     /* =========================================
-       HEADER (TIU VIRTUAL MÁS A LA DERECHA)
+       HEADER
        ========================================= */
     .header {
       width: 100%;
       display: flex;
       align-items: center;
-      margin-top: 6px;
-      margin-bottom: 16px;
-      padding-left: 8px; /* Botón pegado a la izquierda */
+      margin-top: 4px;
+      margin-bottom: 28px; /* COTA 1: Separación amplia a la cápsula */
+      padding-left: 8px;
       z-index: 2;
     }
 
@@ -132,7 +132,7 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
       border: none;
       cursor: pointer;
-      margin-right: 22px; /* Desplaza TIU VIRTUAL a la derecha */
+      margin-right: 22px;
     }
 
     .back-btn svg {
@@ -151,14 +151,14 @@
     }
 
     /* =========================================
-       PASTILLA DE LA HORA (ALTURA CALIBRADA: 58px)
+       PASTILLA DE HORA Y FECHA
        ========================================= */
     .clock-pill {
       background: #dfdffc;
       border-radius: 12px;
-      width: 232px;
-      height: 58px; /* Altura reducida y proporcionada */
-      margin-bottom: 8px;
+      width: 230px;
+      height: 54px; /* Altura calibrada */
+      margin-bottom: 12px; /* COTA 2: Separación reloj - fecha */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -166,7 +166,7 @@
     }
 
     .clock {
-      font-size: 2.15rem;
+      font-size: 2.1rem;
       color: #111111;
       font-weight: 400;
       letter-spacing: -0.3px;
@@ -179,16 +179,16 @@
       color: #5c6270;
       font-weight: 400;
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 34px; /* COTA 3: Separación fecha - foto */
       z-index: 2;
     }
 
     /* =========================================
-       FOTO TOTALMENTE SEPARADA DE LA TARJETA
+       FOTO DE PERFIL
        ========================================= */
     .profile-picture {
-      width: 138px;
-      height: 138px;
+      width: 136px;
+      height: 136px;
       border-radius: 50%;
       overflow: hidden;
       background: #e2e5eb;
@@ -196,7 +196,7 @@
       justify-content: center;
       align-items: center;
       z-index: 2;
-      margin-bottom: 26px; /* Separación física real con la tarjeta */
+      margin-bottom: 38px; /* COTA 4: Separación amplia foto - tarjeta blanca */
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
       flex-shrink: 0;
     }
@@ -208,13 +208,13 @@
     }
 
     /* =========================================
-       TARJETA BLANCA INDEPENDIENTE
+       TARJETA BLANCA
        ========================================= */
     .card {
       background: #ffffff;
       border-radius: 12px;
       width: 100%;
-      padding: 24px 16px 20px 16px; /* Padding limpio sin trucos de montaje */
+      padding: 24px 16px 20px 16px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       text-align: center;
       z-index: 2;
@@ -298,7 +298,7 @@
       </svg>
     </div>
 
-    <!-- Header con TIU VIRTUAL alineado a la derecha -->
+    <!-- Header -->
     <div class="header">
       <button class="back-btn" onclick="history.back()">
         <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
@@ -306,7 +306,7 @@
       <div class="title">TIU Virtual</div>
     </div>
 
-    <!-- Cápsula con altura exacta -->
+    <!-- Pastilla de hora -->
     <div class="clock-pill">
       <div id="clock" class="clock">--:--:--</div>
     </div>
@@ -314,12 +314,12 @@
     <!-- Fecha -->
     <div id="date" class="date">--</div>
 
-    <!-- Foto totalmente despegada de la tarjeta -->
+    <!-- Foto con separación libre en el cielo -->
     <div class="profile-picture">
       <img src="./carnet.jpg" alt="Foto de perfil" />
     </div>
 
-    <!-- Tarjeta blanca de datos -->
+    <!-- Tarjeta blanca -->
     <div class="card">
       <div class="name">Marisa Valery</div>
       <div class="masked-lastname">G*** A***</div>
