@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>TIU Virtual</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
       position: relative;
       width: 100vw;
       max-width: 430px;
-      height: 100dvh;
+      height: 100%; /* Usamos 100% para ocupar toda la ventana real */
       max-height: 932px;
       background: #f7f9fd;
       display: flex;
@@ -185,7 +185,7 @@
     }
 
     /* =========================================
-       FOTO DE PERFIL (CALIBRADA AL CENTRO VERTICAL)
+       FOTO DE PERFIL (INTACTA)
        ========================================= */
     .profile-picture {
       position: absolute;
@@ -211,16 +211,16 @@
     }
 
     /* =========================================
-       TARJETA BLANCA (FIJADA A LA LÍNEA ROJA)
+       TARJETA BLANCA (FORZADA SOBRE LA BARRA DE SAFARI)
        ========================================= */
     .card {
       position: absolute;
-      bottom: 8px; /* Pegada exactamente a la altura de tu línea roja */
+      bottom: -16px; /* Offset negativo para anular el colchón seguro de Safari */
       left: 16px;
       right: 16px;
       background: #ffffff;
       border-radius: 12px;
-      height: 280px; /* Tamaño idéntico e intacto */
+      height: 280px; /* Dimensiones fijas intactas */
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       text-align: center;
       z-index: 2;
@@ -330,7 +330,7 @@
       <img src="./carnet.jpg" alt="Foto de perfil" />
     </div>
 
-    <!-- Tarjeta blanca ubicada sobre la línea roja -->
+    <!-- Tarjeta blanca ubicada a ras de la barra -->
     <div class="card">
       <div class="name">Marisa Valery</div>
       <div class="masked-lastname">G*** A***</div>
