@@ -111,7 +111,7 @@
     }
 
     /* =========================================
-       HEADER (CALIBRADO SEGÚN REFERENCIA)
+       HEADER (BOTÓN Y T ALINEADOS A LAS GUÍAS)
        ========================================= */
     .header {
       width: 100%;
@@ -119,7 +119,7 @@
       align-items: center;
       margin-top: 4px;
       margin-bottom: 24px;
-      padding-left: 6px;
+      padding-left: 8px; /* Botón alineado bajo la pastilla de hora iOS */
       z-index: 2;
     }
 
@@ -134,7 +134,7 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
       border: none;
       cursor: pointer;
-      margin-right: 14px; /* Distancia exacta para alinear la T */
+      margin-right: 18px; /* Posiciona la T exactamente en el trazo vertical */
     }
 
     .back-btn svg {
@@ -153,12 +153,12 @@
     }
 
     /* =========================================
-       PASTILLA DE HORA (ALINEADA AL BORDE DE LA T)
+       PASTILLA DE HORA (BORDE COINCIDENTE CON LA T)
        ========================================= */
     .clock-pill {
       background: #dfdffc;
       border-radius: 12px;
-      width: 236px; /* Ancho ajustado para coincidir en el lateral con la T */
+      width: 244px; /* Ancho ajustado para que su borde coincida con la T */
       height: 54px;
       margin-bottom: 24px;
       display: flex;
