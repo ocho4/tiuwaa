@@ -29,7 +29,7 @@
       position: relative;
       width: 100vw;
       max-width: 430px;
-      height: 100%; /* Usamos 100% para ocupar toda la ventana real */
+      height: 100%;
       max-height: 932px;
       background: #f7f9fd;
       display: flex;
@@ -185,11 +185,11 @@
     }
 
     /* =========================================
-       FOTO DE PERFIL (INTACTA)
+       FOTO DE PERFIL (DESPLAZADA LIGERAMENTE ABAJO)
        ========================================= */
     .profile-picture {
       position: absolute;
-      top: 40.5%;
+      top: 42.8%; /* Bajada proporcionalmente según la referencia */
       left: 50%;
       transform: translate(-50%, -50%);
       width: 138px;
@@ -211,16 +211,16 @@
     }
 
     /* =========================================
-       TARJETA BLANCA (FORZADA SOBRE LA BARRA DE SAFARI)
+       TARJETA BLANCA (CON BOTTOM: -22px)
        ========================================= */
     .card {
       position: absolute;
-      bottom: -20px; /* Offset negativo para anular el colchón seguro de Safari */
+      bottom: -22px; /* Valor solicitado */
       left: 16px;
       right: 16px;
       background: #ffffff;
       border-radius: 12px;
-      height: 280px; /* Dimensiones fijas intactas */
+      height: 280px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       text-align: center;
       z-index: 2;
@@ -330,7 +330,7 @@
       <img src="./carnet.jpg" alt="Foto de perfil" />
     </div>
 
-    <!-- Tarjeta blanca ubicada a ras de la barra -->
+    <!-- Tarjeta blanca -->
     <div class="card">
       <div class="name">Marisa Valery</div>
       <div class="masked-lastname">G*** A***</div>
