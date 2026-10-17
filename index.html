@@ -153,14 +153,14 @@
     }
 
     /* =========================================
-       PASTILLA DE HORA Y FECHA
+       PASTILLA DE HORA Y FECHA RECALIBRADA
        ========================================= */
     .clock-pill {
       background: #dfdffc;
       border-radius: 12px;
       width: 230px;
       height: 54px;
-      margin-bottom: 10px;
+      margin-bottom: 24px; /* Mayor separación hacia la fecha */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -185,11 +185,11 @@
     }
 
     /* =========================================
-       FOTO DE PERFIL (DESPLAZADA LIGERAMENTE ABAJO)
+       FOTO DE PERFIL (INTACTA EN 42.9%)
        ========================================= */
     .profile-picture {
       position: absolute;
-      top: 42.8%; /* Bajada proporcionalmente según la referencia */
+      top: 42.9%; /* Valor alineado que definiste */
       left: 50%;
       transform: translate(-50%, -50%);
       width: 138px;
@@ -211,11 +211,11 @@
     }
 
     /* =========================================
-       TARJETA BLANCA (CON BOTTOM: -22px)
+       TARJETA BLANCA (INTACTA EN -22px)
        ========================================= */
     .card {
       position: absolute;
-      bottom: -22px; /* Valor solicitado */
+      bottom: -22px; /* Valor alineado intacto */
       left: 16px;
       right: 16px;
       background: #ffffff;
@@ -322,15 +322,15 @@
       <div id="clock" class="clock">--:--:--</div>
     </div>
 
-    <!-- Fecha -->
+    <!-- Fecha desplazada más abajo -->
     <div id="date" class="date">--</div>
 
-    <!-- Foto -->
+    <!-- Foto fija en 42.9% -->
     <div class="profile-picture">
       <img src="./carnet.jpg" alt="Foto de perfil" />
     </div>
 
-    <!-- Tarjeta blanca -->
+    <!-- Tarjeta blanca fija en bottom: -22px -->
     <div class="card">
       <div class="name">Marisa Valery</div>
       <div class="masked-lastname">G*** A***</div>
